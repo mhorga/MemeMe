@@ -34,6 +34,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         bottomTextField.textAlignment = .Center
         bottomTextField.delegate = self
         (self.imagePickerView.image != nil) ? (shareButton.enabled = true) : (shareButton.enabled = false)
+        self.tabBarController?.tabBar.hidden = true
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -52,10 +53,12 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         memedImage = generateMemedImage()
         let activityVC = UIActivityViewController(activityItems: [memedImage!], applicationActivities: nil)
         activityVC.completionWithItemsHandler = { (activity, success, items, error) in
-            self.save()
+            if success == true {
+                self.save()
+            }
             self.dismissViewControllerAnimated(true, completion: nil)
         }
-        self.navigationController?.presentViewController(activityVC, animated: true, completion: nil)
+        navigationController?.presentViewController(activityVC, animated: true, completion: nil)
     }
     
     func save() {
@@ -90,11 +93,13 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        self.view.frame.origin.y -= getKeyboardHeight(notification)
+        if self.bottomTextField.isFirstResponder() {
+            self.view.frame.origin.y -= getKeyboardHeight(notification)
+        }
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        self.view.frame.origin.y += getKeyboardHeight(notification)
+        self.view.frame.origin.y = 0
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {

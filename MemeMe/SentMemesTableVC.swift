@@ -17,7 +17,8 @@ class SentMemesTableVC: UITableViewController {
         super.viewWillAppear(animated)
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
-        memes = appDelegate.memes
+        self.memes = appDelegate.memes
+        tableView.reloadData()
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

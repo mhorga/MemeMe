@@ -222,7 +222,7 @@
                     <navigationItem key="navigationItem" title="Sent Memes" id="mbu-sS-vv1">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="OwD-bw-pCz">
                             <connections>
-                                <segue destination="5Wa-9q-yrh" kind="show" id="Baw-bP-NXr"/>
+                                <segue destination="5Wa-9q-yrh" kind="presentation" id="Baw-bP-NXr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -278,7 +278,7 @@
                     <navigationItem key="navigationItem" title="Sent Memes" id="Y3Y-9s-cfx">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fsj-Km-X7r">
                             <connections>
-                                <segue destination="5Wa-9q-yrh" kind="show" id="iIv-1t-KIl"/>
+                                <segue destination="5Wa-9q-yrh" kind="presentation" id="iIv-1t-KIl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -368,6 +368,6 @@
         <image name="Table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Baw-bP-NXr"/>
+        <segue reference="iIv-1t-KIl"/>
     </inferredMetricsTieBreakers>
 </document>
