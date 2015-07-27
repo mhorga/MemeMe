@@ -99,6 +99,7 @@
                         <outlet property="cameraButton" destination="1vH-8y-jrr" id="Ceb-5x-hd1"/>
                         <outlet property="imagePickerView" destination="x3c-a6-YrI" id="aK3-im-mRn"/>
                         <outlet property="shareButton" destination="O5p-kZ-X37" id="zuM-xF-N8D"/>
+                        <outlet property="toolBar" destination="UMm-F9-wZF" id="8Jb-sN-2KH"/>
                         <outlet property="topTextField" destination="knO-cF-RKU" id="AVM-Vh-fkI"/>
                     </connections>
                 </viewController>

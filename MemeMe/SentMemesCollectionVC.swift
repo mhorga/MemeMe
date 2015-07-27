@@ -17,7 +17,7 @@ class SentMemesCollectionVC: UICollectionViewController {
         super.viewWillAppear(animated)
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
-        self.memes = appDelegate.memes
+        memes = appDelegate.memes
         collectionView?.reloadData()
     }
     
@@ -31,13 +31,13 @@ class SentMemesCollectionVC: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.memes.count
+        return memes.count
     }
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let object = self.storyboard!.instantiateViewControllerWithIdentifier("detailView")
+        let object = storyboard!.instantiateViewControllerWithIdentifier("detailView")
         let detailVC = object as! DetailViewController
-        detailVC.meme = self.memes[indexPath.item]
-        self.navigationController!.pushViewController(detailVC, animated: true)
+        detailVC.meme = memes[indexPath.item]
+        navigationController!.pushViewController(detailVC, animated: true)
     }
 }

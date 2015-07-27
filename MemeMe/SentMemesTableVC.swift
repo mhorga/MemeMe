@@ -17,7 +17,7 @@ class SentMemesTableVC: UITableViewController {
         super.viewWillAppear(animated)
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
-        self.memes = appDelegate.memes
+        memes = appDelegate.memes
         tableView.reloadData()
     }
     
@@ -31,13 +31,13 @@ class SentMemesTableVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.memes.count
+        return memes.count
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let object = self.storyboard!.instantiateViewControllerWithIdentifier("detailView")
+        let object = storyboard!.instantiateViewControllerWithIdentifier("detailView")
         let detailVC = object as! DetailViewController
-        detailVC.meme = self.memes[indexPath.row]
-        self.navigationController!.pushViewController(detailVC, animated: true)
+        detailVC.meme = memes[indexPath.row]
+        navigationController!.pushViewController(detailVC, animated: true)
     }
 }

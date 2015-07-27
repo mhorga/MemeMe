@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let meme = Meme(topText: "Top text", bottomText: "Bottom txt", originalImage: UIImage(named: "MemeMe")!, memedImage: UIImage(named: "Memed")!)
-        self.memes.append(meme)
+        memes.append(meme)
         return true
     }
 
